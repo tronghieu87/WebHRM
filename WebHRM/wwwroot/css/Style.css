@@ -1,0 +1,61 @@
+﻿/* Sidebar (Menu bên trái) */
+.sidebar {
+    height: 100%;
+    width: 250px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: #111;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+}
+
+    .sidebar a {
+        padding: 10px 15px;
+        text-decoration: none;
+        font-size: 18px;
+        color: white;
+        display: flex;
+        align-items: center;
+        transition: 0.3s;
+    }
+
+        .sidebar a:hover {
+            background-color: #575757;
+        }
+
+    /* Thu hẹp sidebar */
+    .sidebar.collapsed {
+        width: 60px;
+    }
+
+        /* Ẩn văn bản khi sidebar thu nhỏ */
+        .sidebar.collapsed a span {
+            display: none;
+        }
+
+        /* Căn chỉnh icon ở giữa khi sidebar thu nhỏ */
+        .sidebar.collapsed a {
+            justify-content: center;
+        }
+
+.hamburger {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    font-size: 30px;
+    margin-left: 10px;
+    color: white;
+    cursor: pointer;
+}
+
+.main-content {
+    margin-left: 250px; /* Tạo khoảng trống cho Sidebar */
+    padding: 20px;
+    transition: margin-left 0.5s;
+}
+
+    .main-content.collapsed {
+        margin-left: 60px;
+    }

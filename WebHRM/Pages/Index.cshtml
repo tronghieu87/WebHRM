@@ -1,0 +1,48 @@
+﻿@*@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+</div>
+*@
+
+@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home";
+}
+
+<!-- Liên kết đến file CSS -->
+<link rel="stylesheet" href="~/css/Style.css" />
+
+<!-- HTML cho Sidebar và nội dung -->
+<div class="sidebar" id="sidebar">
+    <a href="#"><i class="fas fa-home"></i><span>Danh mục</span></a>
+    <a href="#"><i class="fas fa-info-circle"></i><span>Thông tin nhân viên</span></a>
+    <a href="#"><i class="fas fa-cogs"></i><span>Services</span></a>
+    <a href="#"><i class="fas fa-envelope"></i><span>Contact</span></a>
+
+    @*-- sinh động item list Menu từ DB
+     @foreach (var item in Model)
+    {
+        <a href="@item.Url">
+            <i class="@item.Icon"></i><span>@item.Title</span>
+        </a>
+    }*@
+</div>
+
+<!-- Nút hamburger để thu nhỏ/mở rộng menu -->
+<span class="hamburger" onclick="toggleSidebar()">&#9776;</span>
+
+<!-- Nội dung chính của trang -->
+<div class="main-content" id="mainContent">
+    <h1>Home Page</h1>
+    <p>Welcome to the home page with a collapsible sidebar menu.</p>
+</div>
+
+ <!-- Liên kết đến file JavaScript -->
+<script src="~/js/site.js"></script>
